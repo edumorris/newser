@@ -3,7 +3,7 @@ import os
 class config:
 
     NEWS_BASE_URL = ''
-    NEW_API_KEY = os.environ.get('NEWS_API_KEY')
+    NEW_API_KEY = os.environ.get('NEWS_API_KEY') #0ffd6c1788664312bcf394317d938e5e
 
 class ProdConfig:
     pass
