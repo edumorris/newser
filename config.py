@@ -1,14 +1,17 @@
 import os
 
-class config:
+class Config:
+    '''
+    General config
+    '''
 
     NEWS_BASE_URL = 'https://newsapi.org/v2/everything?q={}&apiKey={}'
-    NEW_API_KEY = os.environ.get('NEWS_API_KEY') #0ffd6c1788664312bcf394317d938e5e
+    NEWS_API_KEY = os.environ.get('NEWS_API_KEY') #0ffd6c1788664312bcf394317d938e5e
 
-class ProdConfig:
+class ProdConfig(Config):
     pass
 
-class DevConfig:
+class DevConfig(Config):
     DEBUG = True
 
 config_options = {

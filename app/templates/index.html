@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+<!-- Styles block -->
 <!--{% import 'macros.html' as macro %}-->
 {% block styles %}
     {{ super() }}
@@ -9,7 +11,7 @@
 
     <hr>
     <div class="container news-container">
-        {{ macro.displayNewsArticles(Kenya)}}
+        {{ macro.displayNewsArticles(news)}}
     </div>
 
 {% endblock %}

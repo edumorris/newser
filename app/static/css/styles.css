@@ -1,5 +1,8 @@
-.news-container {
-    display: flex;
-    flex-direction: row;
-    padding: 30px;
+.container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    padding: 20px;
+    margin: 20px;
+    background-color: black;
 }

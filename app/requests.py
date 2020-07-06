@@ -24,7 +24,7 @@ base_url = None
 def configure_request(app):
     global api_key, base_url
     api_key = app.config['NEWS_API_KEY']
-    base_url = app.config['NEWS_API_BASE_URL']
+    base_url = app.config['NEWS_BASE_URL']
 
 def get_news(category):
     '''
@@ -39,8 +39,8 @@ def get_news(category):
 
         news_data = None
 
-        if get_news_response['results']:
-            news_data_list = get_news_response['results']
+        if get_news_response['articles']:
+            news_data_list = get_news_response['articles']
             news_data = process_results(news_data_list)
     
     return news_data
