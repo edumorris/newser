@@ -54,7 +54,7 @@ def process_results(news_list):
     news_data = []
     for news in news_list:
         source = news.get('source.name')
-        author = news.get('source.name')
+        author = news.get('author')
         title = news.get('title')
         description = news.get('description')
         url = news.get('url')
@@ -78,6 +78,21 @@ def search_news(news_search):
 
         if search_news_response['articles']:
             search_news_list = search_news_response['articles']
-            search_movie_results = process_results(search_news_list)
+            search_news_results = process_results(search_news_list)
     
     return search_news_results
+
+def get_news_category(topic):
+    get_news_category_url = base_url.format(topic, api_key)
+
+    with urllib.request.urlopen(get_news_category_url) as url:
+        news_category_data = url.read()
+        news_category_response = json.loads(news_category_data)
+
+        category_results = None
+
+        if news_category_response['articles']:
+            news_category_results = news_category_response['articles']
+            category_results = process_results(news_category_results)
+        
+    return category_results

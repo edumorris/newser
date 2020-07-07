@@ -17,3 +17,24 @@
     {% endfor %}
 
 {% endmacro %}
+
+{% macro displayCategoryNews(topic) %}
+
+    {% for top in cat %}
+        <div class="card news-item">
+            <img class="card-img-top img-responsive" src="{{ top.image_url }}" alt="{{ top.title }}">
+            <div class="card-body">
+                <h4 class="card-title">{{ top.title }}</h4>
+                <p class="card-text">
+                    {{ top.description }}
+                </p>
+                <a href="{{ top.url }}" target="_blank" class="btn btn-primary">View Article</a>
+            </div>
+            <div class="card-footer">
+                <p>Time posted: {{ top.publish_time }}</p>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endmacro %}
+
