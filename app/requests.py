@@ -83,7 +83,7 @@ def search_news(news_search):
     return search_news_results
 
 def get_news_category(topic):
-    get_news_category_url = base_url.format(topic, api_key)
+    get_news_category_url = 'https://newsapi.org/v2/everything?q={}&apiKey={}'.format(topic, api_key)
 
     with urllib.request.urlopen(get_news_category_url) as url:
         news_category_data = url.read()
