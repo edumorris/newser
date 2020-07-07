@@ -1,5 +1,6 @@
 import urllib.request, json
 from .models import newsArticles
+import time
 
 
 '''
@@ -57,12 +58,12 @@ def process_results(news_list):
         title = news.get('title')
         description = news.get('description')
         url = news.get('url')
-        imageUrl = news.get('urlToImage')
+        image_url = news.get('urlToImage')
         publish_time = news.get('publishedAt')
         content = news.get('content')
 
         if url:
-            news_object = newsArticles(source, author, title, description, url, imageUrl, publish_time, content)
+            news_object = newsArticles(source, author, title, description, url, image_url, publish_time, content)
             news_data.append(news_object)
     
     return news_data

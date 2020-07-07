@@ -1,8 +1,16 @@
-.container {
+.news-container {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
     padding: 20px;
-    margin: 20px;
+}
+
+.news-item {
+    width: 600px !important;
+    margin: 20px !important;
     background-color: black;
+}
+
+img {
+    max-width: 600px;
 }
