@@ -67,3 +67,17 @@ def process_results(news_list):
             news_data.append(news_object)
     
     return news_data
+
+def search_news(news_search):
+    search_news_url = 'https://newsapi.org/v2/everything?q={}&apiKey={}'.format(news_search, api_key)
+    with urllib.request.urlopen(search_news_url) as url:
+        search_news_data = url.read()
+        search_news_response = json.loads(search_news_data)
+
+        search_news_results = None
+
+        if search_news_response['articles']:
+            search_news_list = search_news_response['articles']
+            search_movie_results = process_results(search_news_list)
+    
+    return search_news_results
